@@ -1,0 +1,11 @@
+---
+baseurl: "http://www.changingwealth.com/"
+title: "Changing Wealth"
+languageCode: "en-us"
+metaDataFormat: "yaml"
+theme: "changingwealth"
+builddrafts: true
+taxonomies:
+  topic: "topics"
+  issue: "issues"
+...

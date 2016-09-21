@@ -1,0 +1,52 @@
+{{ partial "header.html" .}}
+
+{{ partial "navbar.html" }}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">{{ .Title }}</h1>
+            
+
+        </div>
+
+    </div>
+    <!-- End row-->
+</div>
+<!-- End container-->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            <p class="lead">
+              {{ .Params.lead }}
+            </p>
+        </div>
+        <div class="col-md-1"></div>
+    </div>
+    <!-- End row -->
+</div>
+<!-- End container -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-2">
+
+        </div>
+        <div class="col-md-7">
+            {{ .Content }}
+        </div>
+        <div class="col-md-3 col-xs-8">
+          {{ partial "review-sidebar.html"}}
+        </div>
+        <!-- End col -->
+    </div>
+    <!-- End row -->
+</div>
+<!-- End container -->
+
+</div>
+
+{{ partial "footer-nav.html" }}
+{{ partial "footer.html" }}
