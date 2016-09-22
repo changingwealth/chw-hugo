@@ -76,39 +76,33 @@
 	  </div> <!-- End row-->
   </div> <!-- End container-->
 	<hr>
-	<div class="container">
+		<div class="container">
+		
+				
+			<div class="row">
+				<div class="col-md-4"></div>
+				<div class="col-md-4">
+					<div class="issue-number">
+				<p class="text-center"><small>Latest Reviews</small></p> </div>
+			</div>
+				<div class="col-md-4"></div>
+			</div>
+		
+			{{ range first 2 (where .Data.Pages "Section" "review") }}
+		
 		<div class="row">
-			<div class="col-md-4"></div>
-			<div class="col-md-4">
-				<div class="issue-number">
-			<p class="text-center"><small>Number 1 - September 16, 2016</small></p> </div>
-		</div>
-			<div class="col-md-4"></div>
-		</div>
-	<div class="row">
-	  <div class="col-md-1"></div>
-	  <div class="col-md-10">
-  	 	<h2 class="text-center"><a href="/review/food-security-guatemala/">This is the Title of the Thing</a></h2>
-  	    <p class="text-center">By <strong>Renato Vargas</strong>  on  September 16, 2016</p>
-	  	<p>
-	  		Not 234567 too long ago, I was part of a panel at the launch event for TechLadies, an initiative that encourages women to learn to code. Along the way, I mentioned a bit about my background as an athlete. As we were leaving to go home, the woman next to me jokingly asked if I was a better basketball player or a better developer. Without missing a beat, I said I was a better basketball player. After all, I’ve been playing basketball for over half my life; I’ve only been coding for two and a half years.
-	  	</p>
-	  </div>
-	  <div class="col-md-1"></div>
-	</div> <!-- End row -->
+		  <div class="col-md-1"></div>
+		  <div class="col-md-2"><p><img src="img/butler-fledgling.jpg" class="img-responsive" alt="Source: INE (2015)"></p></div>
+		  <div class="col-md-8">
+	  	 	<h2><a href="{{ .Permalink }}"> {{ .Title }} </a></h2>
+	  	    <p> {{ .Params.lead }} </p>
+		  </div>
+		  <div class="col-md-1"></div>
+		</div> 
+	
+		{{ end }}
 
-	<div class="row">
-	  <div class="col-md-1"></div>
-	  <div class="col-md-10">
-  	 	<h2 class="text-center"><a href="/review/food-security-el-salvador">This is the Title of the Thing</a></h2>
-  	    <p class="text-center">By <strong>Renato Vargas</strong>  on  September 16, 2016</p>
-	  	<p>
-	  		Not 234567 too long ago, I was part of a panel at the launch event for TechLadies, an initiative that encourages women to learn to code. Along the way, I mentioned a bit about my background as an athlete. As we were leaving to go home, the woman next to me jokingly asked if I was a better basketball player or a better developer. Without missing a beat, I said I was a better basketball player. After all, I’ve been playing basketball for over half my life; I’ve only been coding for two and a half years.
-	  	</p>
-	  </div>
-	  <div class="col-md-1"></div>
-	</div> <!-- End row -->
-</div> <!-- End container -->
+	</div> <!-- End container -->
 
 <hr>
 

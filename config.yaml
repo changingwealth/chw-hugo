@@ -10,4 +10,5 @@ taxonomies:
   issue: "issues"
   author: "authors"
   tag: "tags"
+  
 ...
