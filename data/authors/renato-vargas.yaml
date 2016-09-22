@@ -1,0 +1,17 @@
+given_name      : "Renato"
+family_name     : "Vargas"
+display_name    : "Renato Vargas"
+thumbnail       : ""
+image           : "img link"
+short_bio       : "Renato es el master del universo."
+bio             : "Renato es el master del universo y te tiene en la mira."
+email           : "renovargas@gmail.com"
+
+social:
+  facebook      : ""
+  github        : ""
+  twitter       : ""
+  googleplus    : ""
+
+params:
+   random       : "whatever you want"

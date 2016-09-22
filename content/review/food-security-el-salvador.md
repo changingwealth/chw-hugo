@@ -1,8 +1,8 @@
 ---
-date: 2016-09-15
+date: 2016-09-21T11:24:12-06:00
 draft: true
-authors: ["Renato Vargas", ]
-title: "This is the Title of the Thing"
+authors: ["Onil Banerjee", ]
+title: "Neque Porro"
 lead: " Aliquam erat volutpat. Sed sit amet tempor metus. Sed et imperdiet dolor. In pharetra consequat nisl, a volutpat ante lobortis ut. Ut facilisis augue in urna elementum sagittis. Pellentesque posuere ultrices sapien, id pulvinar quam pharetra eget. Proin velit justo, vestibulum vitae vulputate vel, pharetra in velit."
 topics: ["Forests", "Water"]
 issues: "01 - September 16, 2016"

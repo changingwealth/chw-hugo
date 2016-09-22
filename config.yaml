@@ -8,4 +8,5 @@ builddrafts: true
 taxonomies:
   topic: "topics"
   issue: "issues"
+  author: "authors"
 ...
