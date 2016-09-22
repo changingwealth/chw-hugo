@@ -7,7 +7,7 @@
         <div class="col-md-12">
             <h1 class="text-center">{{ .Title }}</h1>
             {{if .Params.authors}}
-            <p class="text-center">By <strong> {{ range $index, $author := .Params.authors }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "/authors/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}{{ end }} </strong> on {{ .Date.Format "January 2, 2006" }}</p>
+            <p class="text-center">By <strong> {{ range $index, $author := .Params.authors }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "/_authors/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}{{ end }} </strong> on {{ .Date.Format "January 2, 2006" }}</p>
 
             {{ if .Params.topics }}
             <p class="text-center">
