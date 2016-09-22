@@ -9,4 +9,5 @@ taxonomies:
   topic: "topics"
   issue: "issues"
   author: "authors"
+  tag: "tags"
 ...

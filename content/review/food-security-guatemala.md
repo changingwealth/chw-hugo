@@ -6,6 +6,7 @@ title: "This is the Title of the Thing"
 lead: " Aliquam erat volutpat. Sed sit amet tempor metus. Sed et imperdiet dolor. In pharetra consequat nisl, a volutpat ante lobortis ut. Ut facilisis augue in urna elementum sagittis. Pellentesque posuere ultrices sapien, id pulvinar quam pharetra eget. Proin velit justo, vestibulum vitae vulputate vel, pharetra in velit."
 topics: ["Forests", "Water"]
 issues: "01 - September 16, 2016"
+tags: [ "cge", "Computable General Equilibrium"]
 
 ---
 

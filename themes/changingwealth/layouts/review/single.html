@@ -6,14 +6,15 @@
     <div class="row">
         <div class="col-md-12">
             <h1 class="text-center">{{ .Title }}</h1>
-            {{if .Params.authors}}
-            <p class="text-center">By <strong> {{ range $index, $author := .Params.authors }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "/_authors/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}{{ end }} </strong> on {{ .Date.Format "January 2, 2006" }}</p>
+            {{ if .Params.authors }}
+            <p class="text-center">By <strong> {{ range $index, $author := .Params.authors }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "/authors/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}{{ end }} </strong> on {{ .Date.Format "January 2, 2006" }}</p>
 
             {{ if .Params.topics }}
             <p class="text-center">
                 <small>
-                Published in {{ range $index, $topic := .Params.topics }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "/topics/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}.{{ end }}
+                Published in {{ range $index, $topic := .Params.topics }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "/topics/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}.
                 </small>
+				{{ end }}
             </p>
 
         </div>
@@ -44,6 +45,12 @@
         </div>
         <div class="col-md-7">
             {{ .Content }}
+            {{ if .Params.tags }}
+            <p class="text-center">
+                <small>
+                Tags: {{ range $index, $tag := .Params.tags }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}.
+                </small>
+				{{ end }}
         </div>
         <div class="col-md-3 col-xs-8">
           {{ partial "review-sidebar.html"}}
@@ -57,4 +64,5 @@
 </div>
 
 {{ partial "footer-nav.html" }}
+
 {{ partial "footer.html" }}
