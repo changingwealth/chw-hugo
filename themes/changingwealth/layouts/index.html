@@ -28,16 +28,31 @@
 			{{ range first 2 (where .Data.Pages "Section" "review") }}
 
 		<div class="row">
-		  <div class="col-md-1"></div>
-		  <div class="col-md-8 col-sm-8">
+		  <div class="col-md-1 col-sm-0 col-xs-0"></div>
+		  <div class="col-md-10 col-sm-12 col-xs-12">
 	  	 	<h2><a href="{{ .Permalink }}"> {{ .Title }} </a></h2>
+		</div>
+		<div class="col-md-1 col-sm-0 col-xs-0"></div>
+	</div>
+		<div class="row">
+		  <div class="col-md-1 col-sm-0 col-xs-0"></div>
+		  <div class="col-md-8 col-sm-7 col-xs-12">	
 			{{ with .Params.authors }}<p> By {{ range $index, $tag := . }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "/authors/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}.</p> {{ end }}
 			
 	  	    <p> {{ .Params.lead }} </p>
 			{{ with .Params.tags }}<p> Tags: {{ range $index, $tag := . }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}.</p> {{ end }}
 		  </div>
-      <div class="col-md-2 col-sm-4"><p><img src="img/butler-fledgling.jpg" class="img-responsive" alt="Source: INE (2015)"></p> </div>
-		  <div class="col-md-1"></div>
+      <div class="col-md-2 col-sm-5 col-xs-12"> 
+		  
+
+		  {{ with .Params.reviewed }} {{ range first 1 ( . ) }}
+		  <p>In this review</p>
+		 <img src="{{ index (index $.Site.Data.resource . ) "cover" }}" class="img-responsive center-block" alt="{{ index (index $.Site.Data.resource . ) "title" }}">
+		  
+		  {{ end }} {{ end }}
+		  
+	  </div>
+		  <div class="col-md-1 col-sm-0 col-xs-0"></div>
       
 		</div>
 <hr>

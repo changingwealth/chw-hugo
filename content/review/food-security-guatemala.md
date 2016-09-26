@@ -3,6 +3,7 @@ date: 2016-09-15
 draft: true
 authors: ["Renato Vargas", ]
 title: "This is the Title of the Thing"
+reviewed: ["croitoruEtAl", ]
 lead: " Aliquam erat volutpat. Sed sit amet tempor metus. Sed et imperdiet dolor. In pharetra consequat nisl, a volutpat ante lobortis ut. Ut facilisis augue in urna elementum sagittis. Pellentesque posuere ultrices sapien, id pulvinar quam pharetra eget. Proin velit justo, vestibulum vitae vulputate vel, pharetra in velit."
 topics: ["Forests", "Water"]
 issues: "September 15, 2016"

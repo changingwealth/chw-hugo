@@ -40,28 +40,86 @@
 
 <div class="container">
     <div class="row">
+		
+		
         <div class="col-md-2">
 
         </div>
+		
+		
+		
         <div class="col-md-7">
             {{ .Content }}
             {{ if .Params.tags }}
-            <p >
+            <p>
                 <small>
                 Tags: {{ range $index, $tag := .Params.tags }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}.
-                </small>
+                </small></p>
 				{{ end }}
         </div>
+		
+		
         <div class="col-md-3 col-xs-8">
-          {{ partial "review-sidebar.html"}}
+			
+
+          <!-- {{ partial "review-sidebar.html"}} -->
+		  {{ with .Params.reviewed }}
+
+		  <div class="biblio-box">
+		      <h1 class="text-center text-uppercase">In this review</h1>
+			  
+			  
+				  	  
+			{{ range . }}	  
+				  
+		  <div class="panel panel-default">
+		  <div class="panel-heading"> 
+		  <h2 class="panel-title"> {{  index (index $.Site.Data.resource . ) "title" }} </h2>
+		  </div>
+		  <div class="panel-body ">
+		  <p><img src="{{ index (index $.Site.Data.resource . ) "cover" }}" class="img-responsive" alt="{{ index (index $.Site.Data.resource . ) "title" }}"></p>
+		  <p><strong>Author(s):</strong></p>
+		  <ul>     
+			  {{ range (index (index $.Site.Data.resource . ) "authors" ) }}
+			   <li> {{ . }} </li>
+			  {{ end }}
+		  </ul>
+
+		  <p><strong>Year:</strong></p>
+		  <ul>     
+			  {{ range (index (index $.Site.Data.resource . ) "date" ) }}
+			   <li> {{ . }} </li>
+			  {{ end }}
+		  </ul>
+
+
+		  <p><strong>Published by:</strong></p>
+		  <ul>     
+			  {{ range (index (index $.Site.Data.resource . ) "publishers" ) }}
+			   <li> {{ . }} </li>
+			  {{ end }}
+		  </ul>
+		  
+		  
+
+		  
+	  </div>
+		  </div> <!-- End panel-default -->
+		 
+		 {{ end }}
+		
+		  </div> <!--End biblio-box -->
+ 		 {{ end }}
         </div>
         <!-- End col -->
+		
+		
+		
     </div>
     <!-- End row -->
 </div>
 <!-- End container -->
 
-</div>
 
 {{ partial "footer-nav.html" }}
 

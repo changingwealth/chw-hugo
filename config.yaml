@@ -10,5 +10,8 @@ taxonomies:
   issue: "issues"
   author: "authors"
   tag: "tags"
+  language: "languages"
+  publisher: "publishers"
+  type: "types"
   
 ...
