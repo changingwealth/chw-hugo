@@ -37,6 +37,11 @@ h2 {
 	font-weight:bold;
 }
 
+h4 {
+	font-family: 'PT Sans', Helvetica, sans-serif;
+	font-weight:bold;
+}
+
 nav {
 	font-family: 'PT Sans', Helvetica, sans-serif;
 }
@@ -47,8 +52,18 @@ nav {
 }
 
 .biblio-box p ,.biblio-box ul{
-	font-family: 'PT Sans';
+	font-family: 'PT Sans', Helvetica, sans-serif;
 	color: #000000;
 	list-style:none;
 	font-size: small;
+}
+
+.thumbs-box p ,.thumbs-box ul{
+	font-family: 'PT Sans';
+	color: #000000;
+	list-style:none;
+	font-size: 85%;
+}
+.thumbs-box img {
+	border:1px solid LightGray;
 }

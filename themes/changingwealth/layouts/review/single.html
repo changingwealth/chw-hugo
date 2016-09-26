@@ -66,7 +66,7 @@
 		  {{ with .Params.reviewed }}
 
 		  <div class="biblio-box">
-		      <h1 class="text-center text-uppercase">In this review</h1>
+		      <h4 class="text-center text-uppercase">In this review</h4>
 			  
 			  
 				  	  
@@ -74,10 +74,10 @@
 				  
 		  <div class="panel panel-default">
 		  <div class="panel-heading"> 
-		  <h2 class="panel-title"> {{  index (index $.Site.Data.resource . ) "title" }} </h2>
+		  <h4 class="panel-title"><small> <strong>{{  index (index $.Site.Data.resource . ) "title" }}</strong></small> </h4>
 		  </div>
 		  <div class="panel-body ">
-		  <p><img src="{{ index (index $.Site.Data.resource . ) "cover" }}" class="img-responsive" alt="{{ index (index $.Site.Data.resource . ) "title" }}"></p>
+		  <p><img src="{{ index (index $.Site.Data.resource . ) "cover" }}" class="img-responsive center-block" alt="{{ index (index $.Site.Data.resource . ) "title" }}"></p>
 		  <p><strong>Author(s):</strong></p>
 		  <ul>     
 			  {{ range (index (index $.Site.Data.resource . ) "authors" ) }}
@@ -101,6 +101,7 @@
 		  </ul>
 		  
 		  
+		  <a class="btn btn-primary btn-block btn-xs" href="{{ index (index $.Site.Data.resource . ) "link"}}" >Download</a> 
 
 		  
 	  </div>

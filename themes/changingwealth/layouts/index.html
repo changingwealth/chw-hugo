@@ -1,4 +1,31 @@
-{{ partial "header.html" }}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Changing Wealth</title>
+	<meta name="description" content="A working bibliography on the different types of capital for the people who help build better nations">
+	<meta name="keywords" content="Natural Capital,Human Capital,Produced Capital,Institutional Capital">
+	<meta name="author" content="By CHW Consulting">
+	
+
+    <!-- Bootstrap and custom-->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/custom.css" rel="stylesheet">
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Lora|PT+Sans" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
 
 {{ partial "navbar.html" }}
 
@@ -37,7 +64,7 @@
 		<div class="row">
 		  <div class="col-md-1 col-sm-0 col-xs-0"></div>
 		  <div class="col-md-8 col-sm-7 col-xs-12">	
-			{{ with .Params.authors }}<p> By {{ range $index, $tag := . }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "/authors/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}.</p> {{ end }}
+			{{ with .Params.authors }}<p> A review by {{ range $index, $tag := . }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "/authors/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}.</p> {{ end }}
 			
 	  	    <p> {{ .Params.lead }} </p>
 			{{ with .Params.tags }}<p> Tags: {{ range $index, $tag := . }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}.</p> {{ end }}
@@ -46,8 +73,8 @@
 		  
 
 		  {{ with .Params.reviewed }} {{ range first 1 ( . ) }}
-		  <p>In this review</p>
-		 <img src="{{ index (index $.Site.Data.resource . ) "cover" }}" class="img-responsive center-block" alt="{{ index (index $.Site.Data.resource . ) "title" }}">
+		  <div class="thumbs-box">
+		 <img src="{{ index (index $.Site.Data.resource . ) "cover" }}" class="img-responsive center-block" alt="{{ index (index $.Site.Data.resource . ) "title" }}"></div>
 		  
 		  {{ end }} {{ end }}
 		  
@@ -70,22 +97,25 @@
 <div class="container">
 	<div class="row">
 		<div class="col-md-2"></div>
+		
+		
+		{{ range first 4 (after 2 (where .Data.Pages "Section" "review")) }}
 	  <div class="col-md-2 col-sm-3 col-xs-6">
-		  <h5>Webfonts on the Prairie</h5>
-		  <p><img src="img/butler-fledgling.jpg" class="img-responsive" alt="Source: INE (2015)"></p>
+		  <div class="thumbs-box">
+		  
+ 		  {{ with .Params.reviewed }} {{ range first 1 ( . ) }}
+ 		 <img src="{{ index (index $.Site.Data.resource . ) "cover" }}" class="img-responsive center-block" alt="{{ index (index $.Site.Data.resource . ) "title" }}">
+ 		  {{ end }} {{ end }}
+		  <h5> <a href="{{ .Permalink }}" >{{ .Title }} </a></h5>
+          {{ if .Params.topics }}
+          <p>
+              <small>
+              In {{ range $index, $topic := .Params.topics }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "/topics/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }} on {{ .Date.Format "January 2, 2006" }}.
+              </small> </p>
+			{{ end }}
 	  </div>
-	  <div class="col-md-2 col-sm-3 col-xs-6">
-		  <h5>Webfonts on the Prairie</h5>
-		  <p><img src="img/butler-fledgling.jpg" class="img-responsive" alt="Source: INE (2015)"></p>
-	  </div>
-	  <div class="col-md-2 col-sm-3 col-xs-6">
-		  <h5>Webfonts on the Prairie</h5>
-		  <p><img src="img/butler-fledgling.jpg" class="img-responsive" alt="Source: INE (2015)"></p>
-	  </div>
-	  <div class="col-md-2 col-sm-3 col-xs-6">
-		  <h5>Webfonts on the Prairie</h5>
-		  <p><img src="img/butler-fledgling.jpg" class="img-responsive" alt="Source: INE (2015)"></p>
-	  </div>
+  </div>
+	  {{ end }}
 
 	  <div class="col-md-2">
 
