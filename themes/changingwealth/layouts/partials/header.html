@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <title>{{ .Title }} - A Changing Wealth Review</title>
-	<meta name="description" content="{{ .Params.lead }}">
-	<meta name="author" content="{{ delimit .Params.authors ", " }}">
-	<meta name="keywords" content="{{ delimit .Params.tags ", " }}">
+	{{ with .Params.lead }}<meta name="description" content="{{ .Params.lead }}"> {{ end }}
+	{{ with .Params.authors }}<meta name="author" content="{{ delimit .Params.authors ", " }}">{{ end }}
+	{{ with .Params.tags }}<meta name="keywords" content="{{ delimit .Params.tags ", " }}">{{ end }}
 
     <!-- Bootstrap and custom-->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
