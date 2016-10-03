@@ -16,6 +16,11 @@
                 </small>
 				{{ end }}
             </p>
+			<p class="text-center">
+				<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+				<script type="IN/Share"></script>
+			</p>
+
 
         </div>
 
@@ -29,7 +34,7 @@
         <div class="col-md-1"></div>
         <div class="col-md-10">
             <p class="lead">
-              {{ .Params.lead }}
+              {{ .Params.lead | markdownify }}
             </p>
         </div>
         <div class="col-md-1"></div>

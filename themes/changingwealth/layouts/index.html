@@ -66,7 +66,7 @@
 		  <div class="col-md-8 col-sm-7 col-xs-12">	
 			{{ with .Params.authors }}<p> A review by {{ range $index, $tag := . }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "/authors/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}.</p> {{ end }}
 			
-	  	    <p> {{ .Params.lead }} </p>
+	  	    <p> {{ with .Params.lead }} {{ . | markdownify }} {{ end }} </p>
 			{{ with .Params.tags }}<p> Tags: {{ range $index, $tag := . }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "/tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}.</p> {{ end }}
 		  </div>
       <div class="col-md-2 col-sm-5 col-xs-12"> 
@@ -107,12 +107,12 @@
  		 <img src="{{ index (index $.Site.Data.resource . ) "cover" }}" class="img-responsive center-block" alt="{{ index (index $.Site.Data.resource . ) "title" }}">
  		  {{ end }} {{ end }}
 		  <h5> <a href="{{ .Permalink }}" >{{ .Title }} </a></h5>
-          {{ if .Params.topics }}
+          {{ with .Params.topics }}
           <p>
               <small>
-              In {{ range $index, $topic := .Params.topics }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "/topics/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }} on {{ .Date.Format "January 2, 2006" }}.
+              In {{ range $index, $topic := . }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "/topics/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}{{ end }}  on {{ .Date.Format "January 2, 2006" }}.
               </small> </p>
-			{{ end }}
+			
 	  </div>
   </div>
 	  {{ end }}

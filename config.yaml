@@ -4,7 +4,7 @@ title: "Changing Wealth"
 languageCode: "en-us"
 metaDataFormat: "yaml"
 theme: "changingwealth"
-builddrafts: true
+builddrafts: false
 taxonomies:
   topic: "topics"
   issue: "issues"

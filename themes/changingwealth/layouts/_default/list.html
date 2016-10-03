@@ -36,7 +36,7 @@
               {{ range first 10 .Data.Pages }}
               <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
 			  <p> {{ with .Params.authors }}A review by {{ range $index, $tag := . }}{{ if gt $index 0 }}, {{ end }}<a href="{{ "/authors/" | relURL }}{{ . | urlize }}">{{ . }}</a>{{ end }}{{ end }} - {{ .Date.Format "January 2, 2006" }}</p>
-              <p>{{ .Params.lead }}</p>
+              <p>{{ .Params.lead | markdownify }}</p>
             {{ end }}
 
         </div>
